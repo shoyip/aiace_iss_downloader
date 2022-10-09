@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "iss-downloader"
+version = "0.1.0"
+description = "This script downloads data from the Istituto Superiore di Sanità website and rearranges it for further analysis."
+authors = ["Shoichi Yip <shoichi.yip@gmail.com>"]
+readme = "README.md"
+packages = [{include = "iss_downloader"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+requests = "^2.28.1"
+python-dotenv = "^0.21.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
