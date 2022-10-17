@@ -5,7 +5,7 @@ import tarfile
 from pathlib import Path
 
 load_dotenv(find_dotenv())
-dest_folder = os.environ.get("DEST_FOLDER")
+dest_folder = Path(os.environ.get("DEST_FOLDER"))
 
 # dataset_types = ["iss_80plus",
 #     "iss_age_date",
@@ -57,13 +57,20 @@ def unpack(dest_folder: Path):
     ar.extractall(path = dest_folder / "iss_data")
 
 def main():
+    print("Welcome to the ISS Downloader script!")
+    print("=====================================\n")
+
     # Define parameters
-    dest_folder = Path("./data/")
     url = "https://covid19.infn.it/iss/csv_part/iss.tar.gz"
+    
+    print(f"[LOG] Files are going to be downloaded in folder {dest_folder}")
 
     # Download and unpack the archive
-    download(dest_folder)
-    unpack(url, dest_folder)
+    print("[LOG] Downloading data...")
+    download(url, dest_folder)
+    print("[LOG] Unpacking data...")
+    unpack(dest_folder)
+    print("Done!")
 
 if __name__ == "__main__":
     main()

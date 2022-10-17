@@ -35,6 +35,15 @@ The script can be executed by issuing the following command.
 (iss_downloader_env) $ python main.py
 ```
 
+## Use with Docker
+
+Proceed to issue
+
+```console
+$ docker pull ghcr.io/shoyip/aiace_iss_downloader
+$ docker run -e DEST_FOLDER=/app/data -v /data/aiace/data/raw:/app/data ghcr.io/shoyip/aiace_iss_downloader
+```
+
 ## Impressum
 
 Shoichi Yip // 2022
